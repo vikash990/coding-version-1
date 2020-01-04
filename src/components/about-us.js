@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Row, Col } from 'reactstrap';
 
 import logo from '../Images/vikash.jpg';
-
 
 const ContentWrapper = styled('div')`
     min-height: 70vh;
@@ -17,31 +17,25 @@ const ImageWrapper=styled('img')`
 `
 
 const FirstWrapper =styled('div')`
-
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    margin-top:80px;
-    margin-left:60px;
-    marging-right:200px;
-    
-
-
+    margin: 50px;
 `
 
 class AboutUs extends React.Component{
 
     render(){
         return(
-           <ContentWrapper>            
-             <FirstWrapper>
-                    <div>
-                        <h4>Founder</h4>
-                        <p>Vikash Dubey</p>
-                       <ImageWrapper src={logo}></ImageWrapper>
-                   </div>
-                    <div>
-                        <p>Hi Students,</p>
+           <ContentWrapper> 
+               <Row>
+                   <Col sm={6} xs={12}>  
+                        <FirstWrapper>
+                                <h4>Founder</h4>
+                                <p>Vikash Dubey</p>
+                            <ImageWrapper src={logo}></ImageWrapper>
+                        </FirstWrapper>
+                    </Col>
+                    <Col sm={6} xs={12}>
+                    <FirstWrapper>
+                       <p>Hi Students,</p>
                         <p> Number of students graduate every year but they are left unemployed.</p>
                         <p> They pay lot of money for graduation but lack in skills.</p>
                         <p>We are here to train students so that they can enhance their career.</p>
@@ -52,8 +46,10 @@ class AboutUs extends React.Component{
                         <h6>1) Unlock students potential.</h6>
                         <h6>2)Enhance there skills.'</h6>
                         <h6> 3)Teach them in a right way.</h6>
-                    </div> 
-                </FirstWrapper>
+                        </FirstWrapper>
+                    </Col>
+                </Row>           
+           
            </ContentWrapper>
 
         );

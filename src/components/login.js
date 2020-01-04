@@ -58,7 +58,7 @@ const SignWrapper=styled('div')`
       padding-top: 150;
       padding-top: 30vh;
       width:50vh;
-      height:75vh;
+      height:85vh;
       border-style: solid;
       border-width: 3px;
       border-radius: 25px

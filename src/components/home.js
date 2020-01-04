@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {NavLink,withRouter } from 'react-router-dom';
 import { Slide } from 'react-slideshow-image';      
 
-
+import Text from './text.js';
 import logoh from '../Images/html.jpg';
 import logor from '../Images/react.png';
 import logon from '../Images/nodejs.jpg';
@@ -112,7 +112,7 @@ class Home extends React.Component{
                <Row>
                    <Col sm={6} xs={12}>
                         <FirstWrapper>
-                            <p>Why Coding?</p>
+                            <Text >  Why Coding?</Text>
                             <h4>Enhance Your Coding Skills</h4>
                             <p>We are here to fill the gap between the students and their dreams.</p>
                             <p> Enroll with our online programs with our experts and give your career a lift</p>

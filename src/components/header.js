@@ -20,16 +20,14 @@ const NavLinkWrapper= styled(NavLink)`
       padding: 0 10px;
       justify-content: center;
       color:black
-
+      text-decoration:none;
       &:hover {
         
         color:white;
-        
-
-
       }
     
 `;
+
 const LeftWrapper=styled('div')`
 
         display: flex;
@@ -54,21 +52,23 @@ const RightWrapper=styled('div')`
 const ChildNavWrapper= styled('div')`
       {
         display: none;
+        text-decoration:none;
         position: absolute;
         background-color:rgba(60, 60, 60,0.6);
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
         z-index: 1;
-        margin-top:22px;
+        margin-top:18px;
       }
 
       & .nav {
          float: none;
          color: black;
-         padding: 12px 16px;
+         padding: 8px 8px;
          text-decoration: none;
          display: block;
          text-align: left;
+         text-decoration:none;
          
     }
 
@@ -77,8 +77,7 @@ const ChildNavWrapper= styled('div')`
 
     }
 
-     
-    `
+`
 const LogoWrapper = styled('img')`
         height: 47px;
         margin: 10px 0;
