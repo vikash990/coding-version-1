@@ -5,17 +5,22 @@ import logo from './future.jpg';
 
 const ContentWrapper = styled('div')`
     min-height: 70vh;
+    width: 100%;
 `;
 
 const PopupWrapper = styled('div')`
     margin: 100px 400px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    border: solid aqua;
     border-radius: 50px;
     &:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     }  
-        
+    
+    @media (max-width: 767px) {
+        margin: 40px;
+    }        
 `
 const HeadWrapper = styled('div')`
       display: flex;

@@ -8,8 +8,6 @@ import logot from '../Images/twitter.png';
 import logol from '../Images/linkdin.png';
 import logoi from '../Images/instagram.jpg';
 
-
-
 const NavLinkWrapper = styled(NavLink)`
     display: flex;
     flex-direction: column;
@@ -31,6 +29,13 @@ const RowsWrapper = styled('div')`
     display: flex;
     flex-direction:row;
     justify-content: space-between;
+
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction:column;
+      justify-content: space-between;
+
+  }      
 `;
 const HeadWrapper = styled('h1')`
     color: white;
@@ -46,6 +51,12 @@ const FooterWrapper = styled('div')`
     padding-right: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
+
+    @media (max-width: 767px) {
+      width:100%;
+      
+      
+  }      
 }
 `;
 const InRowWrapper = styled('div')`
@@ -140,11 +151,7 @@ class Footer extends React.Component{
                     </InRowWrapper>
                  </RowWrapper>
             </FooterWrapper>
-           
-
-        );
-
+     );
     }
-
 }
 export default Footer;

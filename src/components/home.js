@@ -1,7 +1,8 @@
 import React from 'react';
+import { Row, Col } from 'reactstrap';
 import styled from 'styled-components';
 import {NavLink,withRouter } from 'react-router-dom';
-import { Slide } from 'react-slideshow-image'
+import { Slide } from 'react-slideshow-image';      
 
 
 import logoh from '../Images/html.jpg';
@@ -13,28 +14,23 @@ import logoc from '../Images/c.jpg';
 import logoj from '../Images/java.png';
 import logoa from '../Images/algorithm.jpg';
 import logo1 from '../Images/coding1.jpg';
- import logo2 from '../Images/coding2.jpg';
- import logo3 from '../Images/coding3.jpg';
- import logo4 from '../Images/coding4.jpg';
+import logo2 from '../Images/coding2.jpg';
+import logo3 from '../Images/coding3.jpg';
+import logo4 from '../Images/coding4.jpg';
  
 
 const ContentWrapper = styled('div')`
     min-height: 70vh;
+    margin: 0 60px;
+    @media(max-width: 768px) {
+        margin: 0 5px;
+    }
 `;
-
-const ContainerSlideWrapper =styled('div')`
-           
-            width:100%;
-            margin: auto;
-            min-height:40vh;
-  `
-  const ImageFirstWrapper =styled('div')`
-   
-            height: 500px;
-            width:100%;
-            text-aling:center;
-  `
-  const proprietes = {
+const SlideWrapper = styled(Slide)`
+    margin: 30px;
+    height: 300px;
+`;
+const proprietes = {
             duration: 5000,
             transitionDuration: 500,
             infinite: true,
@@ -44,115 +40,101 @@ const ContainerSlideWrapper =styled('div')`
 
 
 const FirstWrapper =styled('div')`
-
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    margin-top:5px;
-    margin-left:60px;
-    marging-right:40px;
-    
-
-
+    margin: 50px;
 `
-const SecondWrapper=styled('div')`
-
-    display:flex;
-    flex-direction:row;
-    
-
-
-`
-const ImageWrapper=styled('img')`
-
-    margin-right: 100px;
+const CourseImageWrapper=styled('img')`
     border-radius: 10px;
-
-
-`
-const NavLinkWrapper= styled(NavLink)`
-    
-      display: flex;
-      flex-direction: column;
-      padding: 0 10px;
-      justify-content: center;
-  
-`
-const LogoWrapper =styled('div')`
-
-     display:flex;
-     flex-flow:row;
-     margin-right: 100px;
-     margin-left: 300px;
-     margin-top:30px;
-     margin-bottom:50px;
-     
+    margin: 30px;
+    @media(max-width: 767px) {
+        margin: 5px;
+    }
 `
 const HeadingWrapper=styled('h4')`
-     margin-left:65px;
-
-
-
+    font-weight: 600;
+    @media(max-width: 767px){
+        text-align: center;
+    }
 
 `
+const ColWrapper = styled(Col)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+const ImageWrapper = styled('img')`
+    max-height: 300px;
+    border-radius: 8px;
+    @media(max-width: 767px) {
+        width: 100%;
+    }
+`;
+
+const courses = [
+    {
+        link: '/web-development/',
+        image: logoh,
+    },
+    {
+        link: '/web-development/',
+        image: logor,
+    },
+    {
+        link: '/web-development/',
+        image: logon,
+    },
+    {
+        link: '/web-development/',
+        image: logom,
+    },
+    {
+        link: '/web-development/',
+        image: logoml,
+    },
+    {
+        link: '/web-development/',
+        image: logoc,
+    },
+    {
+        link: '/web-development/',
+        image: logoj,
+    },
+    {
+        link: '/web-development/',
+        image: logoa,
+    },
+];
 
 class Home extends React.Component{
 
     render(){
         return(
            <ContentWrapper>
-               <ContainerSlideWrapper>
-              <Slide {...proprietes}>
-                <ImageFirstWrapper>
-                   <img src ={logo1} alt="coding1"/>
-                </ImageFirstWrapper>
-                <ImageFirstWrapper>
-                  <img src ={logo2} alt="coding2"/>
-                </ImageFirstWrapper>
-                <ImageFirstWrapper>
-                <img src ={logo3} alt="coding3"/>
-                </ImageFirstWrapper>
-                <ImageFirstWrapper>
-                <img src ={logo4} alt="coding4"/>
-                </ImageFirstWrapper>
-              </Slide>
-
-           </ContainerSlideWrapper> 
-               <FirstWrapper>
-                    <div>
-                        <p>Why Coding?</p>
-                        <h4>Enhance Your Coding Skills</h4>
-                        <p>We are here to fill the gap between the students and their dreams.</p>
-                        <p> Enroll with our online programs with our experts and give your career a lift</p>
-                    </div>
-                    
-        
-                </FirstWrapper>
-                
-                    <div>
-                    <HeadingWrapper>What we teach.</HeadingWrapper>
-                       <LogoWrapper>
-                            <NavLinkWrapper to ="/web-development" exact><a href="/web-development"><ImageWrapper src={logoh}/></a></NavLinkWrapper>
-                            <NavLinkWrapper to ="/web-development" exact><a href="/web-development"><ImageWrapper src={logor}/></a></NavLinkWrapper>
-                            <NavLinkWrapper to ="/web-development" exact><a href="/web-development"><ImageWrapper src={logon}/></a></NavLinkWrapper>
-                            <NavLinkWrapper to ="/web-development" exact><a href="/web-development"><ImageWrapper src={logom}/></a></NavLinkWrapper>
-                            
-                       </LogoWrapper>
-                       <LogoWrapper>
-                            <NavLinkWrapper to ="/machine-learning" exact><a href="/web-development"><ImageWrapper src={logoml}/></a></NavLinkWrapper>
-                            <NavLinkWrapper to ="/c++" exact><a href="/web-development"><ImageWrapper src={logoc}/></a></NavLinkWrapper>
-                            <NavLinkWrapper to ="/java" exact><a href="/web-development"><ImageWrapper src={logoj}/></a></NavLinkWrapper>
-                            <NavLinkWrapper to ="/algorithm" exact><a href="/web-development"><ImageWrapper src={logoa}/></a></NavLinkWrapper>
-                            
-                       </LogoWrapper>
-                    </div>
-                         
-                    <div>
-                     </div>
-                     <div>
-                      </div>
-                
-              
+               <Row>
+                   <Col sm={6} xs={12}>
+                        <FirstWrapper>
+                            <p>Why Coding?</p>
+                            <h4>Enhance Your Coding Skills</h4>
+                            <p>We are here to fill the gap between the students and their dreams.</p>
+                            <p> Enroll with our online programs with our experts and give your career a lift</p>
+                        </FirstWrapper>
+                    </Col>
+                    <Col sm={6} xs={12}>
+                        <SlideWrapper {...proprietes}>
+                            <ImageWrapper src ={logo1} alt="coding1"/>
+                            <ImageWrapper src ={logo2} alt="coding2"/>
+                            <ImageWrapper src ={logo3} alt="coding3"/>
+                            <ImageWrapper src ={logo4} alt="coding4"/>
+                        </SlideWrapper>
+                    </Col>
+                </Row>
+                <HeadingWrapper>Our Courses</HeadingWrapper>
+                <Row>
+                    {courses.map(course => (
+                            <ColWrapper xs={6} sm={3}>
+                                <NavLink to={course.link} exact><a href={course.link}><CourseImageWrapper src={course.image}/></a></NavLink>
+                            </ColWrapper>
+                    ))}
+                </Row>
             </ContentWrapper>
 
         );

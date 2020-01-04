@@ -1,9 +1,6 @@
 import React from 'react';
-import './App.css';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
-import styled from 'styled-components';
-
 
 import Header from './components/header.js';
 import Home from './components/home.js';
@@ -24,9 +21,6 @@ import SuccessStories from './components/success-stories.js';
 import Profile from './components/profile.js';
 import Logout from './components/logout.js';
  
-
-
-
 const routeItems = [
   {
     path: '/',
@@ -104,13 +98,11 @@ class App extends React.Component{
       <Router>
         <div className="App">
           <Header />
-          
+
            {routeItems.map((item,index) => (
              <Route key={index} path={item.path} exact strict component={item.component}/>
 
-
             ))
-
            }
            <Footer/>
         </div>
